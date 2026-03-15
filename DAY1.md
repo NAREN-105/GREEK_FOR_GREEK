@@ -59,3 +59,54 @@ class Solution {
 
 **Time Complexity:** O(n)  
 **Space Complexity:** O(n)
+
+---
+
+## Problem 2: Score of a String
+
+**Description:**
+
+You are given a string `s`. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.
+
+Return the score of `s`.
+
+---
+
+**Example 1:**
+```
+Input: s = "code"
+Output: 24
+```
+**Explanation:** The ASCII values of the characters in the given string are: `'c' = 99`, `'o' = 111`, `'d' = 100`, and `'e' = 101`. The score of `s` will be: `|111 - 99| + |100 - 111| + |101 - 100|`.
+
+**Example 2:**
+```
+Input: s = "neetcode"
+Output: 65
+```
+
+---
+
+### Solution
+
+```java
+class Solution {
+    public int scoreOfString(String s) {
+        int sum = 0;
+        char str[] = s.toCharArray();
+        
+        for(int i = 0; i < str.length - 1; i++) {
+            char a = str[i + 1];
+            char b = str[i];
+            sum += Math.abs((a - 0) - (b - 0));
+        }
+        
+        return sum;
+    }
+}
+```
+
+---
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n)
