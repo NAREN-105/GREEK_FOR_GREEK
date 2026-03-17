@@ -87,3 +87,96 @@ class Solution {
 
 **Time Complexity:** O(N) — single pass through `s`  
 **Space Complexity:** O(1) — only two pointers used
+
+---
+
+## Problem 2: Length of Last Word
+
+**Description:**
+You are given a string `s` consisting of words and spaces. Return the length of the last word in the string.
+
+A word is a maximal substring consisting of non-space characters only.
+
+---
+
+**Input Format:**
+- A string `s` consisting of English letters and spaces
+
+**Output Format:**
+- An integer representing the length of the last word
+
+---
+
+**Constraints:**
+- `1 ≤ s.length ≤ 10,000`
+- `s` consists of only English letters and spaces
+
+---
+
+**Sample Input 1:**
+```
+s = "Hello World"
+```
+**Sample Output 1:**
+```
+5
+```
+**Explanation:**
+The last word is `"World"` with length `5`.
+
+---
+
+**Sample Input 2:**
+```
+s = "   fly me   to   the moon  "
+```
+**Sample Output 2:**
+```
+4
+```
+**Explanation:**
+The last word is `"moon"` with length `4`.
+
+---
+
+**Sample Input 3:**
+```
+s = "luffy is still joyboy"
+```
+**Sample Output 3:**
+```
+6
+```
+**Explanation:**
+The last word is `"joyboy"` with length `6`.
+
+---
+
+### Solution
+
+```java
+class Solution {
+    public int lengthOfLastWord(String s) {
+        int i = s.length() - 1;
+        int length = 0;
+
+        // Skip trailing spaces
+        while (i >= 0 && s.charAt(i) == ' ') {
+            i--;
+        }
+
+        // Count characters of the last word
+        while (i >= 0 && s.charAt(i) != ' ') {
+            length++;
+            i--;
+        }
+
+        return length;
+    }
+}
+```
+
+---
+
+**Time Complexity:** O(N) — traverses the string from the end  
+**Space Complexity:** O(1) — only a pointer and counter used
