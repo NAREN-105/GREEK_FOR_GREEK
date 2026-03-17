@@ -160,23 +160,18 @@ class Solution {
         int i = s.length() - 1;
         int length = 0;
 
-        // Skip trailing spaces
+        // Skip trailing sp
         while (i >= 0 && s.charAt(i) == ' ') {
             i--;
         }
-
-        // Count characters of the last word
         while (i >= 0 && s.charAt(i) != ' ') {
             length++;
             i--;
         }
-
         return length;
     }
 }
 ```
-
 ---
-
 **Time Complexity:** O(N) — traverses the string from the end  
 **Space Complexity:** O(1) — only a pointer and counter used
